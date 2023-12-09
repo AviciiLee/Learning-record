@@ -1,1 +1,1 @@
-- 空间换时间
+# Learning Record
