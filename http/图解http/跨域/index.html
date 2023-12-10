@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="requestBtn">请求</button>
+    <script>
+      document.querySelector('#requestBtn').addEventListener('click', () => {
+        const xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              console.log(xhr.responseText)
+            }
+          }
+        }
+        xhr.onerror = function (err) {
+          console.log(err)
+        }
+        xhr.open('POST', 'http://localhost:3001')
+        xhr.setRequestHeader('X-Test-Cors', 'test')
+        xhr.send(null)
+      })
+    </script>
+    <!-- <script src="http://localhost:3001"></script> -->
+  </body>
+</html>

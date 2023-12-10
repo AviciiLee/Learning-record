@@ -6,7 +6,7 @@ const client = net.createConnection(
     port: 80
   },
   () => {
-    client.write(`GET / HTTP/1.1\r\n
+    client.write(`HEAD / HTTP/1.1\r\n
     Host: www.baidu.com\r\n
     Cookie: BAIDUID=818763236A41AB723EE45626F70C2555:FG=1;`)
     console.log('connected to server!')
